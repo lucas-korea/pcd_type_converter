@@ -18,10 +18,13 @@ C계열 언어는 솔직히 최대한 피하고 싶은 마음이 크다
 본 코드를 실행파일로 만들고 싶다면 pyinstaller 패키지를 사용하면 된다.
 
 이에 대해 공부하기 싫다면 
-'''
+
+```
 pyinstaller --onefile pcd_type_converting_program.py
-'''
+```
+
 이렇게 하면 dist라는 폴더 안에 실행파일 생긴다.
+
 
 본 프로그램을 테스트하기 위한 pcd 샘플도 동봉한다
 
