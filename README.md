@@ -18,15 +18,13 @@ C계열 언어는 솔직히 최대한 피하고 싶은 마음이 크다
 본 코드를 실행파일로 만들고 싶다면 pyinstaller 패키지를 사용하면 된다.
 
 이에 대해 공부하기 싫다면 
-
-pip install pyinstaller (conda든 뭐든 어쨌든)
+'''
 pyinstaller --onefile pcd_type_converting_program.py
-
+'''
 이렇게 하면 dist라는 폴더 안에 실행파일 생긴다.
 
-본 파일을 테스트하기 위한 pcd 샘플도 동봉한다
+본 프로그램을 테스트하기 위한 pcd 샘플도 동봉한다
 
 같은 데이터 다른 타입이니까 이리저리 변환변환해보면서 성능을 확인해보면 되겠다
 
-pcd 데이터 뷰어로는 cloud compare를 추천한다
-다만 cloud compare는 ascii type만 읽을 줄 안다
+pcd 데이터 뷰어로는 cloud compare를 추천한다. bin, ascii 둘 다 호환된다(안되는 줄 알았는데! 글쓰면서 확인차 넣어봤는데 되네..?? 맙소사 대체 난 왜..)
