@@ -1,5 +1,7 @@
 # PCD type converter
 
+[blog link](https://cjung.tistory.com/16)
+
 ## PCD란
 pcd (=point cloud data) 파일은 특정한 포맷으로 정의되어 있으며,
 크게 두가지 data type을 가지고 있다.
