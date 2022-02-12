@@ -27,7 +27,7 @@ C++에는 pcl이라는 라이브러리가 있는데 이를 이용하면 좀 더 
 
 본 코드를 실행파일로 만들고 싶다면 **pyinstaller** 패키지를 사용하면 된다.
 
-이에 대해 공부하기 싫다면 
+이에 대해 공부하기 싫다면
 
 ```
 pyinstaller --onefile pcd_type_converting_program.py
@@ -46,5 +46,16 @@ _같은 데이터 다른 타입_
 
 pcd 데이터 뷰어로는 **cloud compare**를 추천한다. bin, ascii 둘 다 호환된다
 
-​
-[##_Image|kage@kHaey/btrtaiZfkWL/lyYTkGul8OnPwocMYaZQf1/img.gif|CDM|1.3|{"originWidth":600,"originHeight":284,"style":"alignCenter","caption":"pcd-type-converter 사용 예시","filename":"ezgif.com-gif-maker.gif"}_##][##_Image|kage@cz1BN1/btrs72izr2B/9jzLC4Pvdes8qI1KbgfIsk/img.gif|CDM|1.3|{"originWidth":1857,"originHeight":1080,"style":"alignCenter","width":613,"height":356,"caption":"cloud compare 사용 예시 및 결과 검증. 원본과 변환한 파일이 동일한 데이터를 보여줌을 알 수 있다."}_##]
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/57425658/153703612-7e2dfcd7-9390-4094-833c-be05ee12199c.gif"  width="700" height="370">
+	<em>pcd-type-converter 사용 예시</em>
+<p>
+
+<p align="center">
+	<img src="https://user-images.githubusercontent.com/57425658/153703616-132f1d63-806e-4341-91b7-2f4ec3ad9292.gif"  width="700" height="370">
+	<em>cloud compare 사용 예시 및 결과 검증. 원본과 변환한 파일이 동일한 데이터를 보여줌을 알 수 있다.</em>
+<p>
+
+
+
