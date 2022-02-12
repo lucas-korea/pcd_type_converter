@@ -35,7 +35,6 @@ def select_folder(str_ = "폴더를 선택해주세요"):
 def parsing_binPCD2asciiPCD(PCD, type_list, count_list):
     start = 0
     lines = [[]]
-
     pack_str = ""
     format_str = ""
     byte_len = 0
@@ -67,6 +66,7 @@ def parsing_binPCD2asciiPCD(PCD, type_list, count_list):
             start = start + byte_len
             line_i = line_i + 1
         except Exception as e:
+            print('bin2pcd process breaken cause', e)
             break
     return lines
 
@@ -109,6 +109,7 @@ def binPCD2asciiPCD(file_list): # args가 없으면 코드가 위치한 디렉�
                     size_list.append(words[j+1])
             elif words[0] == "TYPE":
                 for j in range(len(words)-1):
+                    if words[j+1] == '': continue
                     type_list.append(words[j+1])
             elif words[0] == "COUNT":
                 for j in range(len(words)-1):
@@ -186,7 +187,7 @@ def asciiPCD2binPCD(file_list):
                     pack_str = pack_str + "B"
         with open(save_path + '\\' + file_name.split('\\')[-1][:-4] + "_bin.pcd", 'w') as f:
             f.write(''.join(header))
-        with open(save_path + file_name.split('\\')[-1][:-4] + "_bin.pcd", 'ab') as f:
+        with open(save_path + '\\' + file_name.split('\\')[-1][:-4] + "_bin.pcd", 'ab') as f:
             for j in range(len(list_pcd)):
                 for k in range(len(pack_str)):
                     f.write(struct.pack(pack_str[k], list_pcd[j][k]))
