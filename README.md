@@ -45,3 +45,6 @@ _같은 데이터 다른 타입_
 이니까 이리저리 변환변환해보면서 성능을 확인해보면 되겠다
 
 pcd 데이터 뷰어로는 **cloud compare**를 추천한다. bin, ascii 둘 다 호환된다
+
+​
+[##_Image|kage@kHaey/btrtaiZfkWL/lyYTkGul8OnPwocMYaZQf1/img.gif|CDM|1.3|{"originWidth":600,"originHeight":284,"style":"alignCenter","caption":"pcd-type-converter 사용 예시","filename":"ezgif.com-gif-maker.gif"}_##][##_Image|kage@cz1BN1/btrs72izr2B/9jzLC4Pvdes8qI1KbgfIsk/img.gif|CDM|1.3|{"originWidth":1857,"originHeight":1080,"style":"alignCenter","width":613,"height":356,"caption":"cloud compare 사용 예시 및 결과 검증. 원본과 변환한 파일이 동일한 데이터를 보여줌을 알 수 있다."}_##]
