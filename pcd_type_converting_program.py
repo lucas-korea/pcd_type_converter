@@ -32,7 +32,7 @@ def select_folder(str_ = "폴더를 선택해주세요"):
     return "\\".join(folder.split("/"))
 
 
-def parsing_binPCD2asciiPCD(PCD, type_list, count_list):
+def parsing_binPCD2asciiPCD(PCD, size_list, type_list, count_list):
     start = 0
     lines = [[]]
     pack_str = ""
@@ -48,9 +48,12 @@ def parsing_binPCD2asciiPCD(PCD, type_list, count_list):
                 byte_len = byte_len + 4
         elif (type_list[i] == "U"):
             for j in range(int(count_list[i])):
-                pack_str = pack_str + "B"
+                if size_list[i] == "1":
+                    pack_str = pack_str + "B"
+                elif size_list[i] == "4":
+                    pack_str = pack_str + 'I'
                 format_str = format_str + "{} "
-                byte_len = byte_len + 1
+                byte_len = byte_len + int(size_list[i])
     line_i = 0
     format_str = format_str.split(" ")
     while (1):
@@ -118,7 +121,7 @@ def binPCD2asciiPCD(file_list): # args가 없으면 코드가 위치한 디렉�
         if breaker:
             continue
         PCD_data_part = Origin_pcd_f.read() # 헤더까지 다 읽은 기록이 있기 때문에, 나머지를 다 읽으면 PCD 데이터 부분이다.
-        lines = parsing_binPCD2asciiPCD(PCD_data_part, type_list, count_list)
+        lines = parsing_binPCD2asciiPCD(PCD_data_part, size_list, type_list, count_list)
         with open (save_path + '\\' + file_name.split('\\')[-1][:-4] + "_ascii.pcd", 'w') as f:
             f.write(''.join(header))
             f.write('\n'.join(lines))
@@ -135,6 +138,7 @@ def asciiPCD2binPCD(file_list):
         header = []
         list_pcd = []
         type_list = []
+        size_list = []
         count_list = []
         read_suc = []
         breaker = False
@@ -162,6 +166,9 @@ def asciiPCD2binPCD(file_list):
             elif words[0] == "COUNT":
                 for j in range(len(words)-1):
                     count_list.append(words[j+1])
+            elif words[0] == "SIZE":
+                for j in range(len(words)-1):
+                    size_list.append(words[j+1])
             header.append(line+'\n')
         if breaker:
             continue
@@ -184,7 +191,10 @@ def asciiPCD2binPCD(file_list):
                     pack_str = pack_str + "f"
             elif type_list[i] == "U":
                 for j in range(int(count_list[i])):
-                    pack_str = pack_str + "B"
+                    if size_list[i] == '1':
+                        pack_str = pack_str + "B"
+                    elif size_list[i] =='4':
+                        pack_str = pack_str + "I"
         with open(save_path + '\\' + file_name.split('\\')[-1][:-4] + "_bin.pcd", 'w') as f:
             f.write(''.join(header))
         with open(save_path + '\\' + file_name.split('\\')[-1][:-4] + "_bin.pcd", 'ab') as f:
