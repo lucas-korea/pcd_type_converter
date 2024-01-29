@@ -19,9 +19,6 @@ python2까지밖에 지원을 안한다. 어떻게든 포팅할 수 있는 방�
 
 pcd 다루는 프로젝트를 진행하다 보니, 비슷한 기능을 하는 프로그램이 어쩌다가 만들어져서, 그냥 프로젝트로 삼고 마무리 했다.
 
-C++에는 pcl이라는 라이브러리가 있는데 이를 이용하면 좀 더 쉽게 바꿀 수 있을것으로 보이나
-~~C계열 언어는 솔직히 최대한 피하고 싶은 마음이 크다~~
-
 
 ### 그 외
 
@@ -45,6 +42,13 @@ _같은 데이터 다른 타입_
 
 pcd 데이터 뷰어로는 **cloud compare**를 추천한다. bin, ascii 둘 다 호환된다
 
+<p align="center">
+	<img src="https://github.com/lucas-korea/polar_image_extract/assets/57425658/d2418be5-eec9-45ee-bf65-d292a725198f"  width="500" height="170">
+<p>
+<p align="center" style="color:gray">
+pcd-type-converter 프로그램 동작 화면 
+</p>
+
 
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/57425658/153703612-7e2dfcd7-9390-4094-833c-be05ee12199c.gif"  width="700" height="370">
@@ -64,3 +68,9 @@ cloud compare 사용 예시 및 결과 검증. 원본과 변환한 파일이 동
 </p>
 
 
+<p align="center">
+	<img src="https://github.com/lucas-korea/polar_image_extract/assets/57425658/8d398dbb-1e8a-4af4-9fe3-b9d74a2b79fa"  width="500" height="240">
+<p>
+<p align="center" style="color:gray">
+pcd 변환결과 비교
+</p>
